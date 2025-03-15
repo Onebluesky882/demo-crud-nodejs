@@ -12,6 +12,15 @@ app.use(cors());
 
 app.use("/api", userRouter);
 app.use(errorHandling);
+// app.use("/api/v2", (req, res, next) => {
+//   if (
+//     res.header["content-type"] &&
+//     res.header["content-type"] === "application/json"
+//   ) {
+//     req.body = JSON.parse(Buffer.from(req.body).toString("utf-8"));
+//   }
+//   next();
+// });
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
